@@ -21,19 +21,43 @@ const Header = () => {
         flex-wrap: nowrap;
         flex-direction: column;
         align-items: center;
+        @media (max-width: 700px){
+            width: 80%;
+            margin: 25px;
+        }
+        @media (min-width: 700px){
+            
+            animation: mover;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            animation-direction: reverse;
+        }
+        @keyframes mover {
+            from{
+                transform: translateY(0);
+                opacity: calc(100%);
+            }
+            to {transform: translateY(200px);
+                opacity: calc(0%)
+            }
+        }
 `
     const H1 = styled.h1`
         color: white;
+        font-family: 'Lato', sans-sesrif;
         font-size: 50px;
         margin-bottom: 20px;
 `
     const H2 = styled.h2`
         color: white;
+        font-family: 'Lato', sans-sesrif;
         font-size: 25px;
         margin-bottom: 10px;
 `
     const P = styled.p`
         color: white;
+        font-family: 'Lato', sans-sesrif;
         font-size: 25px;
 `
     const Img = styled.img`
@@ -42,6 +66,23 @@ const Header = () => {
         @media (max-width: 700px){
             width: 80%;
             margin: 25px;
+        }
+        @media (min-width: 700px){
+            
+            animation: mover;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-fill-mode: forwards;
+            animation-direction: reverse;
+        }
+        @keyframes mover {
+            from{
+                transform: translateY(0);
+                opacity: calc(100%);
+            }
+            to {transform: translateY(200px);
+                opacity: calc(0%)
+            }
         }
 `
 

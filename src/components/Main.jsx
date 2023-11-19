@@ -3,6 +3,11 @@ import React from 'react'
 import {images} from '../assets/images/images';
 
 const Main = () => {
+    const Main = styled.div`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    `
     const DivP = styled.div`
         width: 100%;
         margin-top: 160px;  
@@ -13,8 +18,8 @@ const Main = () => {
         color: #6e6e6e;
         text-align: center;
         font-weight: 700;
-        font-size: 60px;
-        padding: 15px 150px 15px 150px;   
+        font-size: 30px;
+        padding: 15px 120px 15px 120px;;   
     }
     @media (max-width: 700px){
         font-family: 'Lato', sans-sesrif;
@@ -49,21 +54,13 @@ const Main = () => {
             margin: 15px 15px;
         }
         @media (min-width: 1040px){
-            width: 800px;
-            height: 800px;
+            width: 650px;
+            height: 600px;
         }
     `
-    const DivF = styled.div`
-        margin: 15px;
-        
-    `
-    const P2 = styled.p`
-        color: grey;
-        text-align: start;
-        font-weight: 700;        
-    `
+    
   return (
-    <>
+    <Main>
         <DivP>
             <P>Soy una persona altamente motivada y comprometida, siempre buscando
                 nuevos desafíos para superarme a mí mismo. Con una actitud
@@ -76,15 +73,12 @@ const Main = () => {
                 alcanzar mis metas.</P>
         </DivP>
         <DivI>
-            <Img src={images.diegoPic} alt="Diego Foto" srcset="" />
-            <Img src={images.reactImage} alt="Imagen React" srcset="" />
-            <Img src={images.codeImage} alt="background" srcset="" />
-            <Img src={images.teclado} alt="Teclado" srcset="" />
+            <Img src={images.diegoPic} alt="Diego Foto"  />
+            <Img src={images.reactImage} alt="Imagen React"  />
+            <Img src={images.codeImage} alt="background"  />
+            <Img src={images.teclado} alt="Teclado"  />
         </DivI>
-        <DivF>
-            <P2>© Diego Toledo 2023</P2>
-        </DivF>
-    </>
+    </Main>
   )
 }
 
