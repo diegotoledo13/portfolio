@@ -20,6 +20,7 @@ import www from "./www.png";
 import llaveInglesa from "./llave.png";
 import check from "./check.png";
 import netlify from './netlify.png';
+import tailwind from './tailwind.png';
 
 const imagesLogo = {
   reactLogo2,
@@ -43,7 +44,8 @@ const imagesLogo = {
   www,
   llaveInglesa,
   check,
-  netlify
+  netlify,
+  tailwind,
 };
 
 export default imagesLogo;
