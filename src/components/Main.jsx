@@ -62,6 +62,15 @@ const Main = () => {
   return (
     <Main>
         <DivP>
+            <P>I am a highly motivated and committed person, always looking for 
+               new challenges to overcome myself.
+               With a persevering and determined attitude, 
+               I never give up in the face of the obstacles that arise and 
+               I always find a way to move forward. As a passionate self-taught, 
+               I dedicate a large part of my free time to learning new skills and knowledge, 
+               always trying to improve my skills. With a constant focus on personal and professional growth,
+                always committed to improving every day and reaching my goals.</P>
+
             <P>Soy una persona altamente motivada y comprometida, siempre buscando
                 nuevos desafíos para superarme a mí mismo. Con una actitud
                 perseverante y decidida, nunca me rindo ante los obstáculos que se

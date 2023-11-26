@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import imagesLogo from '../assets/icons/imagesLogo'
 
 const Footer = () => {
     const P2 = styled.p`
@@ -8,15 +9,41 @@ const Footer = () => {
         font-weight: 700;        
     `
     const DivF = styled.div`
-    margin: 15px;
-    display: flex;
-    justify-content: center;
+        display:grid;
+        grid-template-rows: 2fr;
+      justify-items: center;
+      justify-content: center;
     
     `
+    const DivS = styled.div`    
+        margin: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    `
+    const ImgI = styled.img`
+        width: 15px;
+        height: 15px;
+        margin: 10px 10px;
+    `
+  const Span = styled.span`
+        font-family: 'Lato', sans-sesrif;
+        color: #6e6e6e;
+        text-align: center;
+        font-weight: 700;
+        font-size: 15px;
+  `
 
   return (
     <DivF>
-        <P2>© Diego Toledo 2023</P2>
+        <P2>© Diego Toledo 2023 - Uruguay</P2>
+        <DivS>          
+          <ImgI src={imagesLogo.mail} alt="email"/>
+          <Span>diego.toledo.sanchez13@gmail.com</Span>
+          <ImgI src={imagesLogo.call} alt="telefono - phone" />
+          <Span>+59899818265</Span>
+        </DivS>
     </DivF>
   )
 }
