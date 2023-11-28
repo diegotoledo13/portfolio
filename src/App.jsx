@@ -10,18 +10,13 @@ import { españolVersion } from "./data/españolVersion"
 
 function App() {
   const [language, setLanguage] = useState('english')
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'english' ? 'español' : 'english');
-  }
-
   const text = language === 'english' ? englishVersion : españolVersion;
 
   return (
     <>
       <Header/>
-      <Menu/>
-      <button type="button" onClick={toggleLanguage}>Español</button>
+      <Menu language={language}
+            setLanguage={setLanguage}/>
       <Main text={text}/>      
       <Habilidades text={text}/>
       <Footer/>

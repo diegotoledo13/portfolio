@@ -3,45 +3,54 @@ import React from 'react'
 import imagesLogo from '../assets/icons/imagesLogo'
 
 
-const Menu = () => {
-    const DivS = styled.div`
+ 
+const DivS = styled.div`
        
-        top: 0px;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        background-color: #dedede;
-        @media (min-width: 700px){            
-            justify-content: flex-end;
-            background-color: unset;
-            padding-right: 30px;
-            width: auto;
-        }
-  `
-    const Img = styled.img`
-        width: 35px;
-        height: 35px;
-        margin: 5px;
-        animation: opacity;
-        animation-duration: 2s;
-        animation-timing-function: linear;
-        animation-direction: reverse;
+top: 0px;
+display: flex;
+justify-content: center;
+width: 100%;
+background-color: #dedede;
+@media (min-width: 700px){            
+    justify-content: flex-end;
+    background-color: unset;
+    padding-right: 30px;
+    width: auto;
+}
+`
+const Img = styled.img`
+width: 35px;
+height: 35px;
+margin: 5px;
+animation: opacity;
+animation-duration: 2s;
+animation-timing-function: linear;
+animation-direction: reverse;
 
-        @media (max-width: 700px){
-           padding: 10px;
-        }
-        @keyframes opacity {
-            from{
-                opacity: calc(100%);
-            }
-            to {
-                opacity: calc(0%)
-            }
-        }
-  `
-    const DivMenu = styled.div`
-  
-  `
+@media (max-width: 700px){
+   padding: 10px;
+}
+@keyframes opacity {
+    from{
+        opacity: calc(100%);
+    }
+    to {
+        opacity: calc(0%)
+    }
+}
+`
+const Button = styled.button`
+width: 15px;
+height: 15px;
+
+`
+const DivMenu = styled.div`
+`
+
+const Menu = ({language, setLanguage}) => {  
+  const toggleLanguage = () => {
+    setLanguage(language === 'english' ? 'español' : 'english');
+  }
   return (
     <DivMenu>
       <DivS>
@@ -55,6 +64,7 @@ const Menu = () => {
           <Img src={imagesLogo.netlify}/>
           </a>
       </DivS>
+      <Button type="button" onClick={toggleLanguage}>{language === 'english' ? 'Español' : 'English'}</Button>
     </DivMenu>
   )
 }
