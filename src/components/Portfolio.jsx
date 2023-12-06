@@ -3,9 +3,10 @@ import styled from '@emotion/styled'
 import Trabajos from './Trabajos'
 
 const DivPortfolio = styled.div`
-    background-color: #f0f0f0;
-    margin: 100px 15px 30px 15px;
-    border-radius: 15px;
+    @media( min-width: 768px){      
+      margin: 100px 15px 30px 50px;
+      width: 80%;
+    }
     
     `
 const Portfolio = () => {

@@ -60,8 +60,8 @@ font-family: 'Lato', sans-sesrif;
 font-size: 25px;
 `
 const Img = styled.img`
-width: 60%;
-margin: 25px;
+    width: 40%;
+    margin: 25px;
 @media (max-width: 700px){
     width: 80%;
     margin: 25px;

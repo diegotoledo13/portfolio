@@ -1,87 +1,131 @@
 import React from 'react'
-import { images } from '../assets/images/images'
-import imagesLogo from '../assets/icons/imagesLogo'
 import styled from '@emotion/styled'
+import trabajos from '../data/trabajos'
 
 
-const Div = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: flex-start;
+const DivMain = styled.div`    
+    margin: 100px 15px 30px 15px;
+    border-radius: 15px;
+    background-color: #ebebeb;
+    display: grid;
+    justify-items: center;
+@media (min-width: 768px){
+  display: flex;
+  flex-direction: column;
+}
+`
+const DivTitulo = styled.div`
+    display: contents;
+
+@media (min-width: 768px){
+  display: flex;
+  flex-direction: row-reverse;
+}
 `
 const Img = styled.img`
-width: 280px;
-height: 250px;
-padding: 5px;
-border-radius: 15px;
+  width: 300px;
+  height: 250px;
+  padding: 5px;
+  border-radius: 15px;
+  opacity: .5;
+  @media (min-width: 768px){
+    width: 400px;
+    height: 350px;
+    margin: 20px;
+  
+  }
 
 `
 const H1 = styled.h1`
-width: 100%;
-font-family: 'Lato', sans-sesrif;
-color: #6e6e6e;
-font-size: 30px;
-font-weight: 700;
+  width: 100%;
+  font-family: 'Lato', sans-sesrif;
+  color: #555555;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  @media (min-width: 768px){
+    text-align: left;
+    margin: 20px;
+  }
 
 ` 
 const P = styled.p`
-font-size: 20px;
-font-family: 'Lato', sans-sesrif;
-color: #6e6e6e;
+  font-size: 20px;
+  font-family: 'Lato', sans-sesrif;
+  color: #6e6e6e;
+  margin: 5px;
+  @media (min-width: 768px){
+    padding: 40px;
+  }
 `
 const H2 = styled.h2`
-font-family: 'Lato', sans-serif;
-color: #6e6e6e;
-font-size: 25px;
+  font-family: 'Lato', sans-serif;
+  color: #555555;
+  font-size: 25px;
+  margin: 5px;
 
 `
 const Ul = styled.ul`
-font-family: 'Lato', sans-serif;
-color: #6e6e6e;
-font-size: 20px;
-font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: #6e6e6e;
+  font-size: 20px;
+  font-weight: 700;
 `
 const DivD = styled.div`
+margin: 5px;
 `
 const ImgLogo = styled.img`
-width: 50px;
-height: 50px;
-margin: 10px;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+`
+
+const DivDependecias = styled.div`
+@media (min-width: 768px){
+    text-align: left;
+    margin: 20px;
+  }
+`
+const DivIconos = styled.div`
+@media (min-width: 768px){
+    text-align: left;
+    margin: 20px;
+  }
 `
 
 
 const Trabajos = () => {
   return (
     <>
-    <Div>
-        <H1>Trabajo 1</H1>
-        <Img src={images.codeImage} alt=""/>
-        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-            , excepturi doloremque saepe laboriosam error fuga maxime, vero 
-            quidem libero sint corrupti tempore deserunt ex aut quod voluptatum 
-            illum perferendis blanditiis.</P>
-        <H2>Dependencias</H2>
-        <Ul>
-            <li>Tailwind</li>
-            <li>React Router DOM</li>
-            <li>React Icons</li>
-            <li>Emotion</li>
-            <li>Styled Components</li>
-        </Ul>
-        
+      {trabajos.map((trabajo) => (
+        <DivMain key={trabajo.id}>
+            <H1>{trabajo.title}</H1>
+          <DivTitulo>
+            <Img src={trabajo.img} alt={trabajo.title}/>
+            <P>{trabajo.description}</P>
+          </DivTitulo>
+          <DivDependecias>
+            <H2>Dependencias</H2>
+            <Ul>
+              {trabajo.dependencias.map((dependencia, i) => (
+                <li key={`${trabajo.id}-dep-${i}`}>{dependencia}</li>
+              ))}
+            </Ul>
+          </DivDependecias>
+          <DivIconos>
             <H2>Deploy - Repository</H2>
             <DivD>
-                <a href="   "><ImgLogo src={imagesLogo.netlify} alt=""/>
+              {trabajo.links.map((link, i) => (
+                <a key={`${trabajo.id}-link-${i}`} href={link.url}>
+                  <ImgLogo src={link.logo} alt=""/>
                 </a>
-                <a href="   "><ImgLogo src={imagesLogo.github} alt=""/>
-                </a>
+              ))}
             </DivD>
-
-    </Div>
-    
+          </DivIconos>
+        </DivMain>
+      ))}
     </>
-  )
-}
+  );
+};
 
 export default Trabajos

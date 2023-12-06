@@ -40,11 +40,43 @@ animation-direction: reverse;
 }
 `
 const Button = styled.button`
-width: 15px;
-height: 15px;
-
+  --b: 3px;   
+  --s: .45em; 
+  --color: #373B44;  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;  
+  margin-right: 45px;
+  @media (max-width: 700px){
+    margin-right: 0px;
+}
+  :hover, :focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+  }
+  :active {
+    background: var(--color);
+    color: #fff;
+  }
 `
 const DivMenu = styled.div`
+  display: grid;
+  justify-items: end;
+  @media (max-width: 700px){
+  justify-items: center;
+}
 `
 
 const Menu = ({language, setLanguage}) => {  

@@ -4,6 +4,7 @@ import Menu from "./components/Menu"
 import Main from "./components/Main"
 import Habilidades from "./components/Habilidades"
 import Footer from "./components/Footer"
+import Portfolio from "./components/Portfolio"
 import { englishVersion } from "./data/englishVersion"
 import { españolVersion } from "./data/españolVersion"
 
@@ -19,6 +20,7 @@ function App() {
             setLanguage={setLanguage}/>
       <Main text={text}/>      
       <Habilidades text={text}/>
+      <Portfolio/>
       <Footer/>
     </>
   )
