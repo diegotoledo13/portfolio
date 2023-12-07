@@ -3,6 +3,13 @@ import React from 'react'
 import imagesLogo from '../assets/icons/imagesLogo'
 
 
+const DivMenu = styled.div`
+  display: grid;
+  justify-items: end;
+  @media (max-width: 700px){
+  justify-items: center;
+}
+`
  
 const DivS = styled.div`
        
@@ -57,7 +64,7 @@ const Button = styled.button`
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;  
-  margin-right: 45px;
+  margin-right: 69px;
   @media (max-width: 700px){
     margin-right: 0px;
 }
@@ -71,13 +78,7 @@ const Button = styled.button`
     color: #fff;
   }
 `
-const DivMenu = styled.div`
-  display: grid;
-  justify-items: end;
-  @media (max-width: 700px){
-  justify-items: center;
-}
-`
+
 
 const Menu = ({language, setLanguage}) => {  
   const toggleLanguage = () => {
@@ -94,6 +95,9 @@ const Menu = ({language, setLanguage}) => {
           </a>
           <a href="https://app.netlify.com/teams/diegokill13/sites" target='_blank'>
           <Img src={imagesLogo.netlify}/>
+          </a>
+          <a href="https://twitter.com/diegokill_lp" target='_blank'>
+          <Img src={imagesLogo.x}/>
           </a>
       </DivS>
       <Button type="button" onClick={toggleLanguage}>{language === 'english' ? 'Español' : 'English'}</Button>

@@ -28,12 +28,12 @@ const Img = styled.img`
   padding: 5px;
   border-radius: 15px;
   opacity: .5;
-  transition: opacity 1.s ease-in-out;
+  transition: opacity 1.5s ease-in-out;
   box-shadow: 0 0 10px #000000 ;
   &:hover{
     opacity: 1;
   }
-  @media (min-width: 800px){
+  @media (min-width: 768px){
     width: 400px;
     height: 350px;
     margin: 20px;  
