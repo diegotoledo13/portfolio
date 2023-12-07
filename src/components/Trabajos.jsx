@@ -28,11 +28,20 @@ const Img = styled.img`
   padding: 5px;
   border-radius: 15px;
   opacity: .5;
-  @media (min-width: 768px){
+  transition: opacity 1.s ease-in-out;
+  box-shadow: 0 0 10px #000000 ;
+  &:hover{
+    opacity: 1;
+  }
+  @media (min-width: 800px){
     width: 400px;
     height: 350px;
-    margin: 20px;
-  
+    margin: 20px;  
+  }
+  @media (min-width: 1100px){
+    width: 600px;
+    height: 450px;
+    margin: 20px;  
   }
 
 `
@@ -54,8 +63,9 @@ const P = styled.p`
   font-family: 'Lato', sans-sesrif;
   color: #6e6e6e;
   margin: 5px;
+  padding:  10px ;
   @media (min-width: 768px){
-    padding: 40px;
+    padding:  60px ;
   }
 `
 const H2 = styled.h2`
@@ -70,7 +80,11 @@ const Ul = styled.ul`
   color: #6e6e6e;
   font-size: 20px;
   font-weight: 700;
+  list-style: none;
 `
+const Li = styled.li`
+  margin: 5px;
+  `
 const DivD = styled.div`
 margin: 5px;
 `
@@ -94,7 +108,8 @@ const DivIconos = styled.div`
 `
 
 
-const Trabajos = () => {
+const Trabajos = ({language}) => {
+
   return (
     <>
       {trabajos.map((trabajo) => (
@@ -102,13 +117,13 @@ const Trabajos = () => {
             <H1>{trabajo.title}</H1>
           <DivTitulo>
             <Img src={trabajo.img} alt={trabajo.title}/>
-            <P>{trabajo.description}</P>
+            <P>{language === 'english' ? trabajo.descriptionEn : trabajo.descriptionEs}</P>
           </DivTitulo>
           <DivDependecias>
             <H2>Dependencias</H2>
             <Ul>
               {trabajo.dependencias.map((dependencia, i) => (
-                <li key={`${trabajo.id}-dep-${i}`}>{dependencia}</li>
+                <Li key={`${trabajo.id}-dep-${i}`}>{dependencia}</Li>
               ))}
             </Ul>
           </DivDependecias>

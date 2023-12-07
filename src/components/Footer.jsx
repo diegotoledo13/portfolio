@@ -38,7 +38,7 @@ font-size: 15px;
 const Footer = () => {
   return (
     <DivF>
-        <P2>© Diego Toledo 2023 - Uruguay</P2>
+        <P2>© Diego Toledo {new Date().getFullYear()} - Uruguay</P2>
         <DivS>          
           <ImgI src={imagesLogo.mail} alt="email"/>
           <Span>diego.toledo.sanchez13@gmail.com</Span>

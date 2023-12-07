@@ -20,7 +20,7 @@ function App() {
             setLanguage={setLanguage}/>
       <Main text={text}/>      
       <Habilidades text={text}/>
-      <Portfolio/>
+      <Portfolio language={language}/>
       <Footer/>
     </>
   )
