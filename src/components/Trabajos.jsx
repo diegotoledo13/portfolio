@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import trabajos from '../data/trabajos'
 
@@ -39,8 +39,8 @@ const Img = styled.img`
     margin: 20px;  
   }
   @media (min-width: 1100px){
-    width: 600px;
-    height: 450px;
+    width: 900px;
+    height: 650px;
     margin: 20px;  
   }
 
@@ -109,6 +109,7 @@ const DivIconos = styled.div`
 
 
 const Trabajos = ({language}) => {
+  const [hovered, setHovered] = useState(false);
 
   return (
     <>
@@ -116,7 +117,13 @@ const Trabajos = ({language}) => {
         <DivMain key={trabajo.id}>
             <H1>{trabajo.title}</H1>
           <DivTitulo>
-            <Img src={trabajo.img} alt={trabajo.title}/>
+          <Img 
+              src={hovered ? trabajo.img[0] : trabajo.img[1]} 
+              alt={trabajo.title}
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
+              style={{ transition: 'opacity 1.5s' }}
+            />
             <P>{language === 'english' ? trabajo.descriptionEn : trabajo.descriptionEs}</P>
           </DivTitulo>
           <DivDependecias>
@@ -131,7 +138,7 @@ const Trabajos = ({language}) => {
             <H2>Deploy - Repository</H2>
             <DivD>
               {trabajo.links.map((link, i) => (
-                <a key={`${trabajo.id}-link-${i}`} href={link.url}>
+                <a key={`${trabajo.id}-link-${i}`} href={link.url} target={'_blank'}>
                   <ImgLogo src={link.logo} alt=""/>
                 </a>
               ))}
