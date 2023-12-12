@@ -1,4 +1,11 @@
 body {
-    margin: 0px;
-    background: conic-gradient(at center top, rgb(17, 24, 39), rgb(243, 244, 246), rgb(17, 24, 39));
+  display: block;
+  align-items: center;
+  margin: 0px;
+  background: conic-gradient(
+    at center top,
+    rgb(17, 24, 39),
+    rgb(243, 244, 246),
+    rgb(17, 24, 39)
+  );
 }
