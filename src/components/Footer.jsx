@@ -13,37 +13,11 @@ const P2 = styled.p`
   text-align: start;
   font-weight: 700;
 `;
-const DivS = styled.div`
-  margin: 15px;
-  display: flex;
-  align-items: center;
-  @media (max-width: 700px) {
-    flex-direction: column;
-  }
-`;
-const ImgI = styled.img`
-  width: 15px;
-  height: 15px;
-  margin: 10px 10px;
-`;
-const Span = styled.span`
-  font-family: "Lato", sans-sesrif;
-  color: #6e6e6e;
-  text-align: center;
-  font-weight: 700;
-  font-size: 15px;
-`;
 
 const Footer = () => {
   return (
     <DivF>
       <P2>© Diego Toledo {new Date().getFullYear()} - Uruguay</P2>
-      <DivS>
-        <ImgI src={imagesLogo.mail} alt="email" />
-        <Span>diego.toledo.sanchez13@gmail.com</Span>
-        <ImgI src={imagesLogo.call} alt="telefono - phone" />
-        <Span>+59899818265</Span>
-      </DivS>
     </DivF>
   );
 };
