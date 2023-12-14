@@ -77,10 +77,9 @@ const P = styled.p`
   font-size: 25px;
 `;
 const Img = styled.img`
-  width: 40%;
   margin: 25px;
   @media (max-width: 700px) {
-    width: 80%;
+    width: 60%;
     margin: 25px;
   }
   @media (min-width: 700px) {
