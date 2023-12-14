@@ -3,13 +3,16 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import styled from "@emotion/styled";
 import { images } from "../assets/images/images";
+import "../index.css";
 
 const DivS = styled.div`
-  margin: 15px;
+  margin-top: 50px;
   display: flex;
   align-items: center;
+  flex-direction: column;
   @media (max-width: 700px) {
-    flex-direction: column;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 `;
 const Form = styled.form`
@@ -21,7 +24,7 @@ const Form = styled.form`
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
-  background-color: #dedede;
+  background-color: var(--color8);
   border-radius: 15px;
   @media (max-width: 700px) {
     padding: 10px;
@@ -66,40 +69,40 @@ const InputSend = styled.input`
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #fff;
+  background-color: var(--color1);
   box-shadow: 0px 0px 5px 0px #000000;
   font-size: 16px;
   font-weight: 700;
-  color: #373b44;
+  color: var(--color9);
   outline: none;
   &:focus {
     box-shadow: 0px 0px 5px 0px #000000;
   }
   &:hover {
-    background-color: #373b44;
-    color: #fff;
+    background-color: var(--color5);
+    color: var(--color1);
   }
 `;
 const Div = styled.div`
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr;
   grid-gap: 20px;
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 20 auto;
   padding: 20px;
   box-sizing: border-box;
-  background-color: #dedede;
+  background-color: var(--color8);
   border-radius: 15px;
   @media (max-width: 700px) {
     padding: 10px;
   }
 `;
 const Img = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 80%;
   border-radius: 15px;
-  box-shadow: 14px 14px 50px 15px #c7c7c7;
   @media (max-width: 700px) {
     width: 100%;
     height: 100%;

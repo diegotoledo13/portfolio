@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Header from "./components/Header";
-import Menu from "./components/Menu";
 import Main from "./components/Main";
 import Habilidades from "./components/Habilidades";
 import Footer from "./components/Footer";
@@ -17,7 +16,6 @@ function App() {
   return (
     <Router>
       <Header />
-      <Menu language={language} setLanguage={setLanguage} />
       <Routes>
         <Route path="/contact" element={<Contact />} />
         <Route path="/habilidades" element={<Habilidades text={text} />} />
@@ -25,7 +23,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio language={language} />} />
         <Route path="/" element={<Main text={text} />} />
       </Routes>
-      <Footer />
+      <Footer setLanguage={setLanguage} language={language} />
     </Router>
   );
 }

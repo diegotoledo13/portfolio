@@ -1,11 +1,15 @@
+:root {
+  --color1: #207ab4;
+  --color2: #3d92c7;
+  --color3: #5baada;
+  --color4: #78c2ec;
+  --color5: #95daff;
+  --color6: #b2e2ff;
+  --color7: #cfeaff;
+  --color8: #ecf7ff;
+  --color9: #ffffff;
+}
+
 body {
-  display: block;
-  align-items: center;
-  margin: 0px;
-  background: conic-gradient(
-    at center top,
-    rgb(17, 24, 39),
-    rgb(243, 244, 246),
-    rgb(17, 24, 39)
-  );
+  background-color: var(--color8);
 }

@@ -1,10 +1,10 @@
 import React from "react";
-import { Link as RouterLink } from "react-router-dom";
 import styled from "@emotion/styled";
 import imagesLogo from "../assets/icons/imagesLogo";
+import "../index.css";
 
 const DivMenu = styled.div`
-  display: grid;
+  display: flex;
   justify-items: end;
   @media (max-width: 700px) {
     justify-items: center;
@@ -16,7 +16,7 @@ const DivS = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #dedede;
+  background-color: var(--color8);
   @media (min-width: 700px) {
     justify-content: flex-end;
     background-color: unset;
@@ -25,13 +25,9 @@ const DivS = styled.div`
   }
 `;
 const Img = styled.img`
-  width: 35px;
-  height: 35px;
+  width: 20px;
+  height: 20px;
   margin: 5px;
-  animation: opacity;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-direction: reverse;
 
   @media (max-width: 700px) {
     padding: 10px;
@@ -62,7 +58,7 @@ const Button = styled.button`
   transition: 0.3s linear, color 0s, background-color 0s;
   outline: var(--b) solid #0000;
   outline-offset: 0.6em;
-  font-size: 16px;
+  font-size: 10px;
   border: 0;
   user-select: none;
   -webkit-user-select: none;
@@ -82,32 +78,13 @@ const Button = styled.button`
     color: #fff;
   }
 `;
-const DivLink = styled.div`
-  padding: 10px;
-`;
-const Link = styled(RouterLink)`
-  color: #373b44;
-  padding: 10px;
-  font-size: 16px;
-  font-family: "Lato", sans-sesrif;
-  font-weight: 800;
-  text-decoration: none;
-  :hover {
-    color: #000;
-  }
-`;
+
 const Menu = ({ language, setLanguage }) => {
   const toggleLanguage = () => {
     setLanguage(language === "english" ? "español" : "english");
   };
   return (
     <DivMenu>
-      <DivLink>
-        <Link to="/">Home</Link>
-        <Link to="/habilidades">Skills</Link>
-        <Link to="/portfolio">Portfolio</Link>
-        <Link to="/contact">Contact</Link>
-      </DivLink>
       <DivS>
         <a href="https://github.com/diegotoledo13" target="_blank">
           <Img src={imagesLogo.github} />
