@@ -173,6 +173,7 @@ const Contact = ({ text }) => {
       <Div>
         <Img src={images.dieguito} />
         <P>{text}</P>
+        <P>Diego Toledo</P>
       </Div>
       <Form onSubmit={sendEmail}>
         <Input type="hidden" name="contact_number" />
