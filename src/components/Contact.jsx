@@ -108,16 +108,6 @@ const Img = styled.img`
     height: 100%;
   }
 `;
-const H3 = styled.h3`
-  font-family: "Lato", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #373b44;
-  text-align: center;
-  @media (max-width: 700px) {
-    font-size: 16px;
-  }
-`;
 const P = styled.p`
   font-family: "Lato", sans-serif;
   font-size: 16px;
@@ -129,7 +119,7 @@ const P = styled.p`
   }
 `;
 
-const Contact = () => {
+const Contact = ({ text }) => {
   const [result, setResult] = useState(false);
   const [errors, setErrors] = useState({});
 
@@ -182,15 +172,7 @@ const Contact = () => {
     <DivS>
       <Div>
         <Img src={images.dieguito} />
-        <H3>Thank You for Your Interest!</H3>
-        <P>
-          Thank you for taking the time to visit my personal website and for
-          expressing interest in a job opportunity. I will make it a priority to
-          get back to you as soon as possible. In the meantime, feel free to
-          explore more about my work on the website. Thank you once again for
-          considering me, and I look forward to the possibility of working
-          together. Best regards, Diego Toledo
-        </P>
+        <P>{text}</P>
       </Div>
       <Form onSubmit={sendEmail}>
         <Input type="hidden" name="contact_number" />

@@ -7,17 +7,31 @@ import Footer from "./components/Footer";
 import Portfolio from "./components/Portfolio";
 import { englishVersion } from "./data/englishVersion";
 import { españolVersion } from "./data/españolVersion";
+import { contactEn } from "./data/contactEn";
+import { contactEs } from "./data/contactEs";
 import Contact from "./components/Contact";
+
+const languageVersions = {
+  english: {
+    main: englishVersion,
+    contact: contactEn,
+  },
+  español: {
+    main: españolVersion,
+    contact: contactEs,
+  },
+};
 
 function App() {
   const [language, setLanguage] = useState("english");
-  const text = language === "english" ? englishVersion : españolVersion;
+  const text = languageVersions[language].main;
+  const contactText = languageVersions[language].contact;
 
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Contact text={contactText} />} />
         <Route path="/habilidades" element={<Habilidades text={text} />} />
         <Route path="/main" element={<Main text={text} />} />
         <Route path="/portfolio" element={<Portfolio language={language} />} />
