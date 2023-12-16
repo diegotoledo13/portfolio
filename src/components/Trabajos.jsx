@@ -13,6 +13,9 @@ const DivMain = styled.div`
     display: flex;
     flex-direction: column;
   }
+  @media (min-width: 1500px) {
+    margin: 250px 250px 250px 250px;
+  }
 `;
 const DivTitulo = styled.div`
   display: contents;
@@ -25,22 +28,18 @@ const DivTitulo = styled.div`
 const Img = styled.img`
   width: 300px;
   height: 250px;
+  margin: 10px;
   padding: 5px;
   border-radius: 15px;
-  opacity: 0.5;
-  transition: opacity 1.5s ease-in-out 1.5s;
   box-shadow: 0 0 10px #000000;
-  &:hover {
-    opacity: 1;
-  }
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     width: 400px;
     height: 350px;
     margin: 20px;
   }
   @media (min-width: 1100px) {
-    width: 900px;
-    height: 650px;
+    width: 600px;
+    height: 450px;
     margin: 20px;
   }
 `;
@@ -63,23 +62,12 @@ const P = styled.p`
   margin: 5px;
   padding: 10px;
   @media (min-width: 768px) {
-    padding: 60px;
   }
 `;
 const H2 = styled.h2`
   font-family: "Lato", sans-serif;
   color: #555555;
   font-size: 25px;
-  margin: 5px;
-`;
-const Ul = styled.ul`
-  font-family: "Lato", sans-serif;
-  color: #6e6e6e;
-  font-size: 20px;
-  font-weight: 700;
-  list-style: none;
-`;
-const Li = styled.li`
   margin: 5px;
 `;
 const DivD = styled.div`
@@ -91,49 +79,63 @@ const ImgLogo = styled.img`
   margin: 10px;
 `;
 
-const DivDependecias = styled.div`
-  @media (min-width: 768px) {
-    text-align: left;
-    margin: 20px;
-  }
-`;
 const DivIconos = styled.div`
   @media (min-width: 768px) {
     text-align: left;
     margin: 20px;
   }
 `;
+const DivIconosInternos = styled.div`
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  @media (min-width: 425px) {
+    transition: none;
+  }
+`;
+const DivImgContainer = styled.div`
+  position: relative;
+`;
+const ImgLogoD = styled.img`
+  padding: 20px;
+  margin: 15px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--color8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #9c9c9c;
+  opacity: 0.8;
+`;
 
 const Trabajos = ({ language }) => {
-  const [hovered, setHovered] = useState(false);
-
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <>
       {trabajos.map((trabajo) => (
         <DivMain key={trabajo.id}>
           <H1>{trabajo.title}</H1>
           <DivTitulo>
-            <Img
-              src={hovered ? trabajo.img[0] : trabajo.img[1]}
-              alt={trabajo.title}
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-              style={{ transition: " all 1s ease-in-out 0.5s " }}
-            />
+            <DivImgContainer>
+              <Img
+                src={trabajo.img[1]}
+                alt={trabajo.title}
+                style={{ transition: " all 1s ease-in-out 0.5s " }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              />
+              <DivIconosInternos style={{ opacity: isHovered ? 1 : 0 }}>
+                {trabajo.dependencias.map((logo, i) => (
+                  <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
+                ))}
+              </DivIconosInternos>
+            </DivImgContainer>
             <P>
               {language === "english"
                 ? trabajo.descriptionEn
                 : trabajo.descriptionEs}
             </P>
           </DivTitulo>
-          <DivDependecias>
-            <H2>Dependencias</H2>
-            <Ul>
-              {trabajo.dependencias.map((dependencia, i) => (
-                <Li key={`${trabajo.id}-dep-${i}`}>{dependencia}</Li>
-              ))}
-            </Ul>
-          </DivDependecias>
           <DivIconos>
             <H2>Deploy - Repository</H2>
             <DivD>
