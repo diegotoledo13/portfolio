@@ -28,8 +28,10 @@ import nextjs from "./nextjs.svg";
 import vercel from "./Vercel.dark.svg";
 import mysql from "./mysql.svg";
 import strapi from "./strapi.svg";
+import postgreSQL from "./postgresql.svg";
 
 const imagesLogo = {
+  postgreSQL,
   strapi,
   mysql,
   vercel,
