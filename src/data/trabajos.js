@@ -8,6 +8,7 @@ import {
   workout32,
   workout41,
   workout42,
+  workout61,
 } from "../assets/images/workout/workout.js";
 
 const trabajos = [
@@ -98,5 +99,32 @@ const trabajos = [
       },
     ],
   },
+  {
+    id: 5,
+    title: "Guitarra LA - Next.js",
+    descriptionEn:
+      "GuitarraLA is a fictional e-commerce application specializing in the sale of guitars. Developed as a practical exercise, the platform utilizes Next.js technology to provide a seamless and dynamic user experience. The application features a custom API built on MySQL to efficiently manage product information, inventory, and transactions. GuitarraLA is the perfect destination for music enthusiasts seeking the perfect guitar for their unique style. Although it's a fictional exercise, the application demonstrates how Next.js and MySQL can be combined to create an efficient and engaging e-commerce platform.",
+    descriptionEs:
+      " GuitarraLA es una aplicación de eComerce a especializada en la venta de guitarras. Desarrollada como ejercicio práctico, la plataforma utiliza la tecnología Next.js para ofrecer una experiencia de usuario fluida y dinámica. La aplicación cuenta con una API personalizada construida en MySQL para gestionar eficientemente la información de productos, inventario y transacciones. GuitarraLA es el destino perfecto para los amantes de la música que buscan la guitarra perfecta para su estilo único. Aunque sea un ejercicio ficticio, la aplicación demuestra cómo Next.js y MySQL pueden combinarse para crear una plataforma de comercio electrónico eficiente y atractiva.",
+    dependencias: [
+      imagesLogo.nextjs,
+      imagesLogo.reactLogo2,
+      imagesLogo.mysql,
+      imagesLogo.strapi,
+    ],
+    img: [workout61, workout61],
+    imgLink: [imagesLogo.github, imagesLogo.vercel],
+    links: [
+      {
+        url: "https://github.com/diegotoledo13/guitarla-next",
+        logo: imagesLogo.github,
+      },
+      {
+        url: "https://guitarla-next-coral.vercel.app/",
+        logo: imagesLogo.vercel,
+      },
+    ],
+  },
 ];
+
 export default trabajos;

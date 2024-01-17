@@ -24,8 +24,16 @@ import x from "./x.png";
 import next from "./nextjs.svg";
 import vite from "./vitejs.svg";
 import styledComponents from "./styledcomponents.svg";
+import nextjs from "./nextjs.svg";
+import vercel from "./Vercel.dark.svg";
+import mysql from "./mysql.svg";
+import strapi from "./strapi.svg";
 
 const imagesLogo = {
+  strapi,
+  mysql,
+  vercel,
+  nextjs,
   reactLogo2,
   instagram,
   linkedin,
