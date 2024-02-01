@@ -9,6 +9,7 @@ import {
   workout41,
   workout42,
   workout61,
+  workout71,
 } from "../assets/images/workout/workout.js";
 
 const trabajos = [
@@ -142,6 +143,27 @@ const trabajos = [
       },
       {
         url: "https://guitarla-next-coral.vercel.app/",
+        logo: imagesLogo.vercel,
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Pokedex - Redux",
+    descriptionEn:
+      "The Pokedex - Redux project is a Pokémon information application. It demonstrates the use of React, Redux, and external API calls to fetch Pokémon data. The application is built with a focus on functional components and hooks, showcasing the power and flexibility of React. The project also includes links to the GitHub repository and the deployed application on Netlify.",
+    descriptionEs:
+      "El proyecto Pokedex - Redux es una aplicación de información de Pokémon. Demuestra el uso de React, Redux y llamadas a API externas para obtener datos de Pokémon. La aplicación está construida con un enfoque en componentes funcionales y hooks, mostrando el poder y la flexibilidad de React. El proyecto también incluye enlaces al repositorio de GitHub y a la aplicación desplegada en Netlify.",
+    dependencias: [imagesLogo.reactLogo2, imagesLogo.redux],
+    img: [workout61, workout71],
+    imgLink: [imagesLogo.github, imagesLogo.netlify],
+    links: [
+      {
+        url: "https://github.com/diegotoledo13/pokedex-redux",
+        logo: imagesLogo.github,
+      },
+      {
+        url: "https://pokedex-redux-diego.netlify.app/",
         logo: imagesLogo.vercel,
       },
     ],

@@ -29,8 +29,10 @@ import vercel from "./Vercel.dark.svg";
 import mysql from "./mysql.svg";
 import strapi from "./strapi.svg";
 import postgreSQL from "./postgresql.svg";
+import redux from "./redux.svg";
 
 const imagesLogo = {
+  redux,
   postgreSQL,
   strapi,
   mysql,

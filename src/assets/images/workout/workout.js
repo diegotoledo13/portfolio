@@ -7,7 +7,9 @@ import workout32 from "./proyecto-03-2.jpg";
 import workout41 from "./proyecto-04-1.jpg";
 import workout42 from "./proyecto-04-2.jpg";
 import workout61 from "./proyecto-06-1.jpg";
+import workout71 from "./proyecto-07-01.png";
 export {
+  workout71,
   workout11,
   workout12,
   workout21,
