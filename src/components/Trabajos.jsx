@@ -1,28 +1,33 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import trabajos from "../data/trabajos";
 import "../index.css";
 
 const DivMain = styled.div`
-  margin: 100px 15px 30px 15px;
+  margin: 20px auto;
   border-radius: 15px;
   background-color: var(--color7);
   display: grid;
   justify-items: center;
+  width: 70%;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 15px rgba(177, 177, 240, 0.5);
+  }
   @media (min-width: 768px) {
     display: flex;
     flex-direction: column;
   }
-  @media (min-width: 1500px) {
-    margin: 250px 250px 250px 250px;
-  }
 `;
 const DivTitulo = styled.div`
-  display: contents;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
   @media (min-width: 768px) {
-    display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 `;
 const Img = styled.img`
@@ -44,7 +49,6 @@ const Img = styled.img`
   }
 `;
 const H1 = styled.h1`
-  width: 100%;
   font-family: "Lato", sans-sesrif;
   color: #555555;
   font-size: 30px;
@@ -99,7 +103,7 @@ const DivImgContainer = styled.div`
 `;
 const ImgLogoD = styled.img`
   padding: 20px;
-  margin: 15px;
+  margin: 10px;
   width: 45px;
   height: 45px;
   background-color: var(--color8);
@@ -109,51 +113,68 @@ const ImgLogoD = styled.img`
 `;
 
 const Trabajos = ({ language }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [expandedId, setExpandedId] = useState(null);
+
+  const handleToggle = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
   return (
     <>
       {trabajos.map((trabajo) => (
-        <DivMain key={trabajo.id}>
-          <H1>{trabajo.title}</H1>
-          <DivTitulo>
-            <DivImgContainer>
-              <Img
-                src={trabajo.img[1]}
-                alt={trabajo.title}
-                style={{ transition: " all 1s ease-in-out 0.5s " }}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              />
-              <DivIconosInternos style={{ opacity: isHovered ? 1 : 0 }}>
-                {trabajo.dependencias.map((logo, i) => (
-                  <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
-                ))}
-              </DivIconosInternos>
-            </DivImgContainer>
-            <P>
-              {language === "english"
-                ? trabajo.descriptionEn
-                : trabajo.descriptionEs}
-            </P>
-          </DivTitulo>
-          <DivIconos>
-            <H2>Deploy - Repository</H2>
-            <DivD>
-              {trabajo.links.map((link, i) => (
-                <a
-                  key={`${trabajo.id}-link-${i}`}
-                  href={link.url}
-                  target={"_blank"}
-                >
-                  <ImgLogo src={link.logo} alt="" />
-                </a>
+        <DivMain key={trabajo.id} expanded={expandedId === trabajo.id}>
+          <DivTitulo onClick={() => handleToggle(trabajo.id)}>
+            <H1>{trabajo.title}</H1>
+            <div>
+              {trabajo.dependencias.map((logo, i) => (
+                <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
               ))}
-            </DivD>
-          </DivIconos>
+            </div>
+          </DivTitulo>
+          {expandedId === trabajo.id && (
+            <>
+              <DivImgContainer>
+                <Img
+                  src={trabajo.img[1]}
+                  alt={trabajo.title}
+                  style={{ transition: " all 1s ease-in-out 0.5s " }}
+                />
+                <DivIconosInternos>
+                  {trabajo.dependencias.map((logo, i) => (
+                    <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
+                  ))}
+                </DivIconosInternos>
+              </DivImgContainer>
+              <P>
+                {language === "english"
+                  ? trabajo.descriptionEn
+                  : trabajo.descriptionEs}
+              </P>
+              <DivIconos>
+                <H2>Deploy - Repository</H2>
+                <DivD>
+                  {trabajo.links.map((link, i) => (
+                    <a
+                      key={`${trabajo.id}-link-${i}`}
+                      href={link.url}
+                      target={"_blank"}
+                      rel="noreferrer"
+                    >
+                      <ImgLogo src={link.logo} alt="" />
+                    </a>
+                  ))}
+                </DivD>
+              </DivIconos>
+            </>
+          )}
         </DivMain>
       ))}
     </>
   );
+};
+
+Trabajos.propTypes = {
+  language: PropTypes.string.isRequired,
 };
 
 export default Trabajos;

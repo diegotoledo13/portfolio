@@ -1,6 +1,6 @@
-import React from "react";
 import styled from "@emotion/styled";
 import Menu from "./Menu";
+import PropTypes from "prop-types";
 
 const DivF = styled.div`
   display: grid;
@@ -32,6 +32,10 @@ const Footer = ({ language, setLanguage }) => {
       <P2>© Diego Toledo {new Date().getFullYear()} - Uruguay</P2>
     </DivF>
   );
+};
+Footer.propTypes = {
+  language: PropTypes.string.isRequired,
+  setLanguage: PropTypes.func.isRequired,
 };
 
 export default Footer;

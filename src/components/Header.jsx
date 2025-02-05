@@ -1,4 +1,3 @@
-import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import styled from "@emotion/styled";
 import { images } from "../assets/images/images";
@@ -132,6 +131,7 @@ const Header = () => {
           <Link to="/contact">Contact</Link>
         </DivLink>
       </HeaderP>
+      <h2>Actualizándose... v05-2-2025</h2>
     </>
   );
 };

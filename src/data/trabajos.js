@@ -10,6 +10,7 @@ import {
   workout42,
   workout61,
   workout71,
+  workout81,
 } from "../assets/images/workout/workout.js";
 
 const trabajos = [
@@ -165,6 +166,27 @@ const trabajos = [
       {
         url: "https://pokedex-redux-diego.netlify.app/",
         logo: imagesLogo.vercel,
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Pokedex - Astro ",
+    descriptionEn:
+      "The Pokedex project in this Astro version is a Pokémon information application. It demonstrates the use of React, Astro, and external API calls to fetch Pokémon data. The application is built with a focus on functional components and hooks, showcasing the power and flexibility of React. The project also includes links to the GitHub repository and the deployed application on Netlify.",
+    descriptionEs:
+      "El proyecto Pokedex en esta version Astro es una aplicación de información de Pokémon. Demuestra el uso de React, Astro y llamadas a API externas para obtener datos de Pokémon. La aplicación está construida con un enfoque en componentes funcionales y hooks, mostrando el poder y la flexibilidad de React. El proyecto también incluye enlaces al repositorio de GitHub y a la aplicación desplegada en Netlify.",
+    dependencias: [imagesLogo.reactLogo2, imagesLogo.astrodev],
+    img: [workout81, workout81],
+    imgLink: [imagesLogo.github, imagesLogo.netlify],
+    links: [
+      {
+        url: "https://github.com/diegotoledo13/pokedex-astro",
+        logo: imagesLogo.github,
+      },
+      {
+        url: "https://pokedex-astro-v1.netlify.app/",
+        logo: imagesLogo.netlify,
       },
     ],
   },

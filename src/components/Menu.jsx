@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import imagesLogo from "../assets/icons/imagesLogo";
 import "../index.css";
@@ -86,22 +86,32 @@ const Menu = ({ language, setLanguage }) => {
   return (
     <DivMenu>
       <DivS>
-        <a href="https://github.com/diegotoledo13" target="_blank">
+        <a
+          href="https://github.com/diegotoledo13"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Img src={imagesLogo.github} />
         </a>
         <a
           href="https://www.linkedin.com/in/diego-toledo-64a356241/"
           target="_blank"
+          rel="noreferrer"
         >
           <Img src={imagesLogo.linkedin} />
         </a>
         <a
           href="https://app.netlify.com/teams/diegokill13/sites"
           target="_blank"
+          rel="noreferrer"
         >
           <Img src={imagesLogo.netlify} />
         </a>
-        <a href="https://twitter.com/diegokill_lp" target="_blank">
+        <a
+          href="https://twitter.com/diegokill_lp"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Img src={imagesLogo.x} />
         </a>
       </DivS>
@@ -110,6 +120,10 @@ const Menu = ({ language, setLanguage }) => {
       </Button>
     </DivMenu>
   );
+};
+Menu.propTypes = {
+  language: PropTypes.string.isRequired,
+  setLanguage: PropTypes.func.isRequired,
 };
 
 export default Menu;

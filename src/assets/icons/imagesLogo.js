@@ -30,8 +30,10 @@ import mysql from "./mysql.svg";
 import strapi from "./strapi.svg";
 import postgreSQL from "./postgresql.svg";
 import redux from "./redux.svg";
+import astrodev from "./Astro.png";
 
 const imagesLogo = {
+  astrodev,
   redux,
   postgreSQL,
   strapi,

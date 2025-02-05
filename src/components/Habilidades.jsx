@@ -1,6 +1,7 @@
-import React from "react";
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { images } from "../assets/images/images";
+import Trabajos from "./Trabajos";
 
 const Div = styled.div`
   display: flex;
@@ -42,7 +43,8 @@ const ImgR = styled.img`
     align-items: flex-start;
   }
 `;
-const Habilidades = ({ text }) => {
+// eslint-disable-next-line react/prop-types
+const Habilidades = ({ text, language }) => {
   return (
     <>
       <Div>
@@ -51,9 +53,14 @@ const Habilidades = ({ text }) => {
           <ImgR src={images.dieguito} />
         </DivC>
         <P>{text}</P>
+        <Trabajos language={language} />
       </Div>
     </>
   );
+};
+Habilidades.propTypes = {
+  text: PropTypes.string.isRequired,
+  lenguage: PropTypes.string.isRequired,
 };
 
 export default Habilidades;

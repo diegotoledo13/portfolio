@@ -32,8 +32,14 @@ function App() {
       <Header />
       <Routes>
         <Route path="/contact" element={<Contact text={contactText} />} />
-        <Route path="/habilidades" element={<Habilidades text={text} />} />
-        <Route path="/main" element={<Main text={text} />} />
+        <Route
+          path="/habilidades"
+          element={<Habilidades text={text} language={language} />}
+        />
+        <Route
+          path="/main"
+          element={<Main text={text} language={language} />}
+        />
         <Route path="/portfolio" element={<Portfolio language={language} />} />
         <Route path="/" element={<Main text={text} />} />
       </Routes>
