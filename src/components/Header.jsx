@@ -131,7 +131,7 @@ const Header = () => {
           <Link to="/contact">Contact</Link>
         </DivLink>
       </HeaderP>
-      <h2>Actualizándose... v05-2-2025</h2>
+      <h2>Actualizándose... v11-2-2025</h2>
     </>
   );
 };

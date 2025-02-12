@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { experiencia } from "../data/experiencia";
 import "../index.css";
@@ -10,11 +11,9 @@ const DivMain = styled.div`
   display: grid;
   justify-items: center;
   width: 70%;
-  transition: max-height 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
-  overflow: hidden;
-  max-height: ${({ expanded }) => (expanded ? "1000px" : "100px")};
+  transition: all 0.3s ease-in-out;
   &:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 0 15px rgba(177, 177, 240, 0.5);
   }
   @media (min-width: 768px) {
     display: flex;
@@ -32,12 +31,22 @@ const DivTitulo = styled.div`
   }
 `;
 const Img = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 300px;
+  height: 250px;
   margin: 10px;
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 15px;
   box-shadow: 0 0 10px #000000;
+  @media (min-width: 800px) {
+    width: 400px;
+    height: 350px;
+    margin: 20px;
+  }
+  @media (min-width: 1100px) {
+    width: 600px;
+    height: 450px;
+    margin: 20px;
+  }
 `;
 const H1 = styled.h1`
   font-family: "Lato", sans-sesrif;
@@ -50,8 +59,60 @@ const H1 = styled.h1`
     margin: 20px;
   }
 `;
+const P = styled.p`
+  font-size: 20px;
+  font-family: "Lato", sans-sesrif;
+  color: #6e6e6e;
+  margin: 5px;
+  padding: 10px;
+  @media (min-width: 768px) {
+  }
+`;
+const H2 = styled.h2`
+  font-family: "Lato", sans-serif;
+  color: #555555;
+  font-size: 25px;
+  margin: 5px;
+`;
+const DivD = styled.div`
+  margin: 5px;
+`;
+const ImgLogo = styled.img`
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+`;
 
-const Experiencia = () => {
+const DivIconos = styled.div`
+  @media (min-width: 768px) {
+    text-align: left;
+    margin: 20px;
+  }
+`;
+const DivIconosInternos = styled.div`
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  @media (min-width: 425px) {
+    transition: none;
+  }
+`;
+const DivImgContainer = styled.div`
+  position: relative;
+`;
+const ImgLogoD = styled.img`
+  padding: 20px;
+  margin: 10px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--color8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #9c9c9c;
+  opacity: 0.8;
+`;
+
+const Trabajos = ({ language }) => {
   const [expandedId, setExpandedId] = useState(null);
 
   const handleToggle = (id) => {
@@ -60,14 +121,51 @@ const Experiencia = () => {
 
   return (
     <>
-      {experiencia.map((exp) => (
-        <DivMain key={exp.id} expanded={expandedId === exp.id}>
-          <DivTitulo onClick={() => handleToggle(exp.id)}>
-            <H1>{exp.title}</H1>
-            <Img src={exp.img[0]} alt={exp.title} />
+      {experiencia.map((trabajo) => (
+        <DivMain key={trabajo.id} expanded={expandedId === trabajo.id}>
+          <DivTitulo onClick={() => handleToggle(trabajo.id)}>
+            <H1>{trabajo.title}</H1>
+            <div>
+              {trabajo.dependencias.map((logo, i) => (
+                <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
+              ))}
+            </div>
           </DivTitulo>
-          {expandedId === exp.id && (
-            <div>{/* Aquí puedes agregar el contenido que desees */}</div>
+          {expandedId === trabajo.id && (
+            <>
+              <DivImgContainer>
+                <Img
+                  src={trabajo.img[1]}
+                  alt={trabajo.title}
+                  style={{ transition: " all 1s ease-in-out 0.5s " }}
+                />
+                <DivIconosInternos>
+                  {trabajo.dependencias.map((logo, i) => (
+                    <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
+                  ))}
+                </DivIconosInternos>
+              </DivImgContainer>
+              <P>
+                {language === "english"
+                  ? trabajo.descriptionEn
+                  : trabajo.descriptionEs}
+              </P>
+              <DivIconos>
+                <H2>Links</H2>
+                <DivD>
+                  {trabajo.links.map((link, i) => (
+                    <a
+                      key={`${trabajo.id}-link-${i}`}
+                      href={link.url}
+                      target={"_blank"}
+                      rel="noreferrer"
+                    >
+                      <ImgLogo src={link.logo} alt="" />
+                    </a>
+                  ))}
+                </DivD>
+              </DivIconos>
+            </>
           )}
         </DivMain>
       ))}
@@ -75,6 +173,8 @@ const Experiencia = () => {
   );
 };
 
-// Removed unused propTypes
+Trabajos.propTypes = {
+  language: PropTypes.string.isRequired,
+};
 
-export default Experiencia;
+export default Trabajos;
