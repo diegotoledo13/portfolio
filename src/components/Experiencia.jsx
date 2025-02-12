@@ -30,24 +30,7 @@ const DivTitulo = styled.div`
     flex-direction: row;
   }
 `;
-const Img = styled.img`
-  width: 300px;
-  height: 250px;
-  margin: 10px;
-  padding: 5px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px #000000;
-  @media (min-width: 800px) {
-    width: 400px;
-    height: 350px;
-    margin: 20px;
-  }
-  @media (min-width: 1100px) {
-    width: 600px;
-    height: 450px;
-    margin: 20px;
-  }
-`;
+
 const H1 = styled.h1`
   font-family: "Lato", sans-sesrif;
   color: #555555;
@@ -74,6 +57,12 @@ const H2 = styled.h2`
   font-size: 25px;
   margin: 5px;
 `;
+const H3 = styled.h2`
+  font-family: "Lato", sans-serif;
+  color: #555555;
+  font-size: 20px;
+  margin: 20px;
+`;
 const DivD = styled.div`
   margin: 5px;
 `;
@@ -81,6 +70,7 @@ const ImgLogo = styled.img`
   width: 50px;
   height: 50px;
   margin: 10px;
+  border-radius: 25%;
 `;
 
 const DivIconos = styled.div`
@@ -89,18 +79,7 @@ const DivIconos = styled.div`
     margin: 20px;
   }
 `;
-const DivIconosInternos = styled.div`
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  @media (min-width: 425px) {
-    transition: none;
-  }
-`;
-const DivImgContainer = styled.div`
-  position: relative;
-`;
+
 const ImgLogoD = styled.img`
   padding: 20px;
   margin: 10px;
@@ -127,31 +106,26 @@ const Trabajos = ({ language }) => {
             <H1>{trabajo.title}</H1>
             <div>
               {trabajo.dependencias.map((logo, i) => (
-                <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
+                <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo}></ImgLogoD>
               ))}
             </div>
           </DivTitulo>
           {expandedId === trabajo.id && (
             <>
-              <DivImgContainer>
-                <Img
-                  src={trabajo.img[1]}
-                  alt={trabajo.title}
-                  style={{ transition: " all 1s ease-in-out 0.5s " }}
-                />
-                <DivIconosInternos>
-                  {trabajo.dependencias.map((logo, i) => (
-                    <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
-                  ))}
-                </DivIconosInternos>
-              </DivImgContainer>
               <P>
                 {language === "english"
                   ? trabajo.descriptionEn
                   : trabajo.descriptionEs}
               </P>
+              <H3>
+                {language === "english" ? trabajo.timeEn : trabajo.timeEs}
+              </H3>
               <DivIconos>
-                <H2>Links</H2>
+                <H2>
+                  {language === "english"
+                    ? trabajo.titleLinksEn
+                    : trabajo.titleLinksEs}
+                </H2>
                 <DivD>
                   {trabajo.links.map((link, i) => (
                     <a
