@@ -19,6 +19,19 @@ export const experiencia = [
         url: "https://tectum.com.uy/",
         logo: [images.tectum],
       },
+
+      {
+        url: "https://adimo.uy/",
+        logo: "[images.tectum]",
+      },
+      {
+        url: "https://propify.uy/",
+        logo: "[images.tectum]",
+      },
+      {
+        url: "https://turisticarduy.uy/",
+        logo: "[images.tectum]",
+      },
     ],
   },
 ];
