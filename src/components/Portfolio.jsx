@@ -11,6 +11,7 @@ const Portfolio = ({ language }) => {
   return (
     <DivPortfolio>
       <Experiencia language={language} />
+      <h2>Actualizándose... v11-2-2025</h2>
     </DivPortfolio>
   );
 };
