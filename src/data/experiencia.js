@@ -22,15 +22,19 @@ export const experiencia = [
 
       {
         url: "https://adimo.uy/",
-        logo: "[images.tectum]",
+        logo: [images.adimo],
       },
       {
         url: "https://propify.uy/",
-        logo: "[images.tectum]",
+        logo: [images.propify],
+      },
+      {
+        url: "https://www.tedescuento.uy/",
+        logo: [images.teDescuento],
       },
       {
         url: "https://turisticarduy.uy/",
-        logo: "[images.tectum]",
+        logo: [images.turusticard],
       },
     ],
   },
