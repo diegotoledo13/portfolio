@@ -10,6 +10,7 @@ import { españolVersion } from "./data/españolVersion";
 import { contactEn } from "./data/contactEn";
 import { contactEs } from "./data/contactEs";
 import Contact from "./components/Contact";
+import "./index.css";
 
 const languageVersions = {
   english: {
@@ -24,26 +25,40 @@ const languageVersions = {
 
 function App() {
   const [language, setLanguage] = useState("english");
+  const [fadeClass, setFadeClass] = useState("fade-in");
   const text = languageVersions[language].main;
   const contactText = languageVersions[language].contact;
 
+  const handleLanguageChange = (newLanguage) => {
+    setFadeClass("fade");
+    setTimeout(() => {
+      setLanguage(newLanguage);
+      setFadeClass("fade-in");
+    }, 500);
+  };
+
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/contact" element={<Contact text={contactText} />} />
-        <Route
-          path="/habilidades"
-          element={<Habilidades text={text} language={language} />}
-        />
-        <Route
-          path="/main"
-          element={<Main text={text} language={language} />}
-        />
-        <Route path="/portfolio" element={<Portfolio language={language} />} />
-        <Route path="/" element={<Main text={text} />} />
-      </Routes>
-      <Footer setLanguage={setLanguage} language={language} />
+      <div className={fadeClass}>
+        <Header />
+        <Routes>
+          <Route path="/contact" element={<Contact text={contactText} />} />
+          <Route
+            path="/habilidades"
+            element={<Habilidades text={text} language={language} />}
+          />
+          <Route
+            path="/main"
+            element={<Main text={text} language={language} />}
+          />
+          <Route
+            path="/portfolio"
+            element={<Portfolio language={language} />}
+          />
+          <Route path="/" element={<Main text={text} />} />
+        </Routes>
+        <Footer setLanguage={handleLanguageChange} language={language} />
+      </div>
     </Router>
   );
 }
