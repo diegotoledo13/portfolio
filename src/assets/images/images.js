@@ -8,7 +8,7 @@ import reactImage from "./reactImagen.jpg";
 import santoscode from "./santos-l.png";
 import tectum from "./logo-blanco.png";
 import teDescuento from "./icon.png";
-import turusticard from "./TuristicarLogo.png";
+import turusticard from "./turusticarLogo.png";
 import adimo from "./logocircular.png";
 import propify from "./Propify.png";
 

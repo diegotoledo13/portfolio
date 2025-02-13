@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import trabajos from "../data/trabajos";
@@ -112,8 +112,24 @@ const ImgLogoD = styled.img`
   opacity: 0.8;
 `;
 
+const Content = styled.div`
+  overflow: hidden;
+  transition: height 0.5s ease;
+`;
+
 const Trabajos = ({ language }) => {
   const [expandedId, setExpandedId] = useState(null);
+  const [heights, setHeights] = useState({});
+
+  const contentRefs = useRef({});
+
+  useEffect(() => {
+    const newHeights = {};
+    Object.keys(contentRefs.current).forEach((id) => {
+      newHeights[id] = contentRefs.current[id].scrollHeight;
+    });
+    setHeights(newHeights);
+  }, [expandedId]);
 
   const handleToggle = (id) => {
     setExpandedId(expandedId === id ? null : id);
@@ -131,42 +147,46 @@ const Trabajos = ({ language }) => {
               ))}
             </div>
           </DivTitulo>
-          {expandedId === trabajo.id && (
-            <>
-              <DivImgContainer>
-                <Img
-                  src={trabajo.img[1]}
-                  alt={trabajo.title}
-                  style={{ transition: " all 1s ease-in-out 0.5s " }}
-                />
-                <DivIconosInternos>
-                  {trabajo.dependencias.map((logo, i) => (
-                    <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
-                  ))}
-                </DivIconosInternos>
-              </DivImgContainer>
-              <P>
-                {language === "english"
-                  ? trabajo.descriptionEn
-                  : trabajo.descriptionEs}
-              </P>
-              <DivIconos>
-                <H2>Deploy - Repository</H2>
-                <DivD>
-                  {trabajo.links.map((link, i) => (
-                    <a
-                      key={`${trabajo.id}-link-${i}`}
-                      href={link.url}
-                      target={"_blank"}
-                      rel="noreferrer"
-                    >
-                      <ImgLogo src={link.logo} alt="" />
-                    </a>
-                  ))}
-                </DivD>
-              </DivIconos>
-            </>
-          )}
+          <Content
+            ref={(el) => (contentRefs.current[trabajo.id] = el)}
+            style={{
+              height:
+                expandedId === trabajo.id ? `${heights[trabajo.id]}px` : "0px",
+            }}
+          >
+            <DivImgContainer>
+              <Img
+                src={trabajo.img[1]}
+                alt={trabajo.title}
+                style={{ transition: " all 1s ease-in-out 0.5s " }}
+              />
+              <DivIconosInternos>
+                {trabajo.dependencias.map((logo, i) => (
+                  <ImgLogoD key={`${trabajo.id}-logo-${i}`} src={logo} />
+                ))}
+              </DivIconosInternos>
+            </DivImgContainer>
+            <P>
+              {language === "english"
+                ? trabajo.descriptionEn
+                : trabajo.descriptionEs}
+            </P>
+            <DivIconos>
+              <H2>Deploy - Repository</H2>
+              <DivD>
+                {trabajo.links.map((link, i) => (
+                  <a
+                    key={`${trabajo.id}-link-${i}`}
+                    href={link.url}
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    <ImgLogo src={link.logo} alt="" />
+                  </a>
+                ))}
+              </DivD>
+            </DivIconos>
+          </Content>
         </DivMain>
       ))}
     </>

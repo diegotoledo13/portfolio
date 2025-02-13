@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import { experiencia } from "../data/experiencia";
@@ -91,8 +91,24 @@ const ImgLogoD = styled.img`
   opacity: 0.8;
 `;
 
+const Content = styled.div`
+  overflow: hidden;
+  transition: height 0.5s ease;
+`;
+
 const Trabajos = ({ language }) => {
   const [expandedId, setExpandedId] = useState(null);
+  const [heights, setHeights] = useState({});
+
+  const contentRefs = useRef({});
+
+  useEffect(() => {
+    const newHeights = {};
+    Object.keys(contentRefs.current).forEach((id) => {
+      newHeights[id] = contentRefs.current[id].scrollHeight;
+    });
+    setHeights(newHeights);
+  }, [expandedId]);
 
   const handleToggle = (id) => {
     setExpandedId(expandedId === id ? null : id);
@@ -110,37 +126,39 @@ const Trabajos = ({ language }) => {
               ))}
             </div>
           </DivTitulo>
-          {expandedId === trabajo.id && (
-            <>
-              <P>
+          <Content
+            ref={(el) => (contentRefs.current[trabajo.id] = el)}
+            style={{
+              height:
+                expandedId === trabajo.id ? `${heights[trabajo.id]}px` : "0px",
+            }}
+          >
+            <P>
+              {language === "english"
+                ? trabajo.descriptionEn
+                : trabajo.descriptionEs}
+            </P>
+            <H3>{language === "english" ? trabajo.timeEn : trabajo.timeEs}</H3>
+            <DivIconos>
+              <H2>
                 {language === "english"
-                  ? trabajo.descriptionEn
-                  : trabajo.descriptionEs}
-              </P>
-              <H3>
-                {language === "english" ? trabajo.timeEn : trabajo.timeEs}
-              </H3>
-              <DivIconos>
-                <H2>
-                  {language === "english"
-                    ? trabajo.titleLinksEn
-                    : trabajo.titleLinksEs}
-                </H2>
-                <DivD>
-                  {trabajo.links.map((link, i) => (
-                    <a
-                      key={`${trabajo.id}-link-${i}`}
-                      href={link.url}
-                      target={"_blank"}
-                      rel="noreferrer"
-                    >
-                      <ImgLogo src={link.logo} alt="" />
-                    </a>
-                  ))}
-                </DivD>
-              </DivIconos>
-            </>
-          )}
+                  ? trabajo.titleLinksEn
+                  : trabajo.titleLinksEs}
+              </H2>
+              <DivD>
+                {trabajo.links.map((link, i) => (
+                  <a
+                    key={`${trabajo.id}-link-${i}`}
+                    href={link.url}
+                    target={"_blank"}
+                    rel="noreferrer"
+                  >
+                    <ImgLogo src={link.logo} alt="" />
+                  </a>
+                ))}
+              </DivD>
+            </DivIconos>
+          </Content>
         </DivMain>
       ))}
     </>

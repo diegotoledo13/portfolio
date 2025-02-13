@@ -12,8 +12,8 @@ export const experiencia = [
     dependencias: [images.santoscode],
     depeendenciasLinks: ["https://santoscode.com/"],
     img: [images.santoscode],
-    titleLinksEs: "Visitar website",
-    titleLinksEn: "Links to website",
+    titleLinksEs: "Participación en proyectos",
+    titleLinksEn: "Participation in projects",
     links: [
       {
         url: "https://tectum.com.uy/",
