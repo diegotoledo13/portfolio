@@ -128,7 +128,7 @@ const trabajos = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     title: "API Guitarra LA",
     descriptionEn:
       "In this project, I crafted an API using Strapi as the content management framework and PostgreSQL as the underlying database. The choice of Strapi facilitated efficient API development thanks to its intuitive interface, simplifying the setup and management of endpoints.",
@@ -149,7 +149,7 @@ const trabajos = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: "Pokedex - Redux",
     descriptionEn:
       "The Pokedex - Redux project is a Pokémon information application. It demonstrates the use of React, Redux, and external API calls to fetch Pokémon data. The application is built with a focus on functional components and hooks, showcasing the power and flexibility of React. The project also includes links to the GitHub repository and the deployed application on Netlify.",
@@ -170,13 +170,13 @@ const trabajos = [
     ],
   },
   {
-    id: 6,
+    id: 8,
     title: "Pokedex - Astro ",
     descriptionEn:
       "The Pokedex project in this Astro version is a Pokémon information application. It demonstrates the use of React, Astro, and external API calls to fetch Pokémon data. The application is built with a focus on functional components and hooks, showcasing the power and flexibility of React. The project also includes links to the GitHub repository and the deployed application on Netlify.",
     descriptionEs:
       "El proyecto Pokedex en esta version Astro es una aplicación de información de Pokémon. Demuestra el uso de React, Astro y llamadas a API externas para obtener datos de Pokémon. La aplicación está construida con un enfoque en componentes funcionales y hooks, mostrando el poder y la flexibilidad de React. El proyecto también incluye enlaces al repositorio de GitHub y a la aplicación desplegada en Netlify.",
-    dependencias: [imagesLogo.reactLogo2, imagesLogo.astrodev],
+    dependencias: [imagesLogo.solid, imagesLogo.astrodev],
     img: [workout81, workout81],
     imgLink: [imagesLogo.github, imagesLogo.netlify],
     links: [

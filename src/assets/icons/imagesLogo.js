@@ -31,6 +31,7 @@ import strapi from "./strapi.svg";
 import postgreSQL from "./postgresql.svg";
 import redux from "./redux.svg";
 import astrodev from "./Astro.png";
+import solid from "./Solid.js.svg";
 
 const imagesLogo = {
   astrodev,
@@ -66,6 +67,7 @@ const imagesLogo = {
   next,
   vite,
   styledComponents,
+  solid,
 };
 
 export default imagesLogo;
