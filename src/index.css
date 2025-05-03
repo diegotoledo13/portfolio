@@ -14,11 +14,24 @@
   --color4: #78c2ec;
   --color5: #95daff;
   --color6: #b2e2ff;
-  --color7: #cfeaff;
+  --color7: rgb(92, 92, 107);
   --color8: #ecf7ff;
   --color9: #ffffff;
 }
 
 body {
-  background-color: var(--color8);
+  background: linear-gradient(188deg, rgb(2, 0, 37), rgb(202, 202, 202));
+  background-size: 120% 120%;
+  animation: gradient-animation 12s ease infinite;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -20,7 +20,7 @@ const DivC = styled.div`
 
 const H1 = styled.h1`
   font-family: "Lato", sans-sesrif;
-  color: #6e6e6e;
+  color: #d4d4d4;
   font-size: 50px;
   margin-bottom: 20px;
   text-align: center;
@@ -28,7 +28,7 @@ const H1 = styled.h1`
 `;
 const P = styled.p`
   font-family: "Lato", sans-sesrif;
-  color: #6e6e6e;
+  color: #d4d4d4;
   text-align: center;
   font-weight: 700;
   font-size: 30px;

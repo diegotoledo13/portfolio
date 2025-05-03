@@ -59,24 +59,25 @@ const Div = styled.div`
   }
 `;
 const H1 = styled.h1`
-  color: #4e4e4e;
+  color: #d4d4d4;
   font-family: "Lato", sans-sesrif;
   font-size: 50px;
   margin-bottom: 20px;
 `;
 const H2 = styled.h2`
-  color: #4e4e4e;
+  color: #d4d4d4;
   font-family: "Lato", sans-sesrif;
   font-size: 25px;
   margin-bottom: 10px;
 `;
 const P = styled.p`
-  color: #4e4e4e;
+  color: #d4d4d4;
   font-family: "Lato", sans-sesrif;
   font-size: 25px;
 `;
 const Img = styled.img`
   margin: 25px;
+  mask-image: radial-gradient(black 20%, transparent 65%);
   @media (max-width: 700px) {
     width: 60%;
     margin: 25px;
@@ -103,7 +104,7 @@ const DivLink = styled.div`
   padding: 10px;
 `;
 const Link = styled(RouterLink)`
-  color: #373b44;
+  color: #d4d4d4;
   padding: 10px;
   font-size: 16px;
   font-family: "Lato", sans-sesrif;

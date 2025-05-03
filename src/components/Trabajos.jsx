@@ -50,7 +50,7 @@ const Img = styled.img`
 `;
 const H1 = styled.h1`
   font-family: "Lato", sans-sesrif;
-  color: #555555;
+  color: #d4d4d4;
   font-size: 30px;
   font-weight: 700;
   text-align: center;
@@ -62,7 +62,7 @@ const H1 = styled.h1`
 const P = styled.p`
   font-size: 20px;
   font-family: "Lato", sans-sesrif;
-  color: #6e6e6e;
+  color: #d4d4d4;
   margin: 5px;
   padding: 10px;
   @media (min-width: 768px) {
@@ -70,7 +70,7 @@ const P = styled.p`
 `;
 const H2 = styled.h2`
   font-family: "Lato", sans-serif;
-  color: #555555;
+  color: #d4d4d4;
   font-size: 25px;
   margin: 5px;
 `;

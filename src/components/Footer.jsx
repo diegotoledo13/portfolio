@@ -8,19 +8,18 @@ const DivF = styled.div`
   justify-items: center;
   justify-content: center;
   align-items: center;
-  background-color: var(--color8);
+
   padding: 10px;
   @media (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     justify-content: center;
     align-items: center;
-    background-color: var(--color8);
     padding: 10px;
   }
 `;
 const P2 = styled.p`
-  color: grey;
+  color: #303030;
   text-align: start;
   font-weight: 700;
 `;

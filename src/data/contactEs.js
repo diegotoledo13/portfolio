@@ -1,2 +1,2 @@
 export const contactEs =
-  "Gracias por tomarse el tiempo de visitar mi sitio web personal y por expresar interés en una oportunidad laboral. Haré de ello una prioridad para responderle lo antes posible. Mientras tanto, no dude en explorar más sobre mi trabajo en el sitio web. Gracias una vez más por considerarme, y espero con interés la posibilidad de trabajar juntos. Saludos cordiales";
+  "Desde ya agradezco que te tomes un tiempo para entrar a mi web personal donde presento mis trabajos que realizo en modo de aprendizaje y quizás de curioso por querer aprender alguna tecnología nueva, siente té cómodo de seguir navegando por ella y si quieres contactar conmigo te dejo mi mail para conectarte o bien puedes usar mis redes para contactarme.Desde ya muchas gracias!";

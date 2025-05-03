@@ -1,2 +1,2 @@
 export const contactEn =
-  "Thank you for taking the time to visit my personal website and for expressing interest in a job opportunity. I will make it a priority to get back to you as soon as possible. In the meantime, feel free to explore more about my work on the website. Thank you once again for considering me, and I look forward to the possibility of working together. Best regards ";
+  "I appreciate you taking the time to visit my personal website, where I showcase my projects that I work on for learning purposes and perhaps out of curiosity to explore new technologies. Feel free to continue browsing, and if you'd like to get in touch with me, you can reach me via email or connect with me through my social media. Thank you very much!";
