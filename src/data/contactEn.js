@@ -1,2 +1,2 @@
 export const contactEn =
-  "I appreciate you taking the time to visit my personal website, where I showcase my projects that I work on for learning purposes and perhaps out of curiosity to explore new technologies. Feel free to continue browsing, and if you'd like to get in touch with me, you can reach me via email or connect with me through my social media. Thank you very much!";
+  "Thank you for visiting my personal website! Here you will find the projects I have developed as part of my continuous learning and exploration of new technologies. I invite you to browse through my portfolio and get to know my work. If you are interested in contacting me, you can do so through my email or my social media links that you will find on this page. Thank you for your time!";
