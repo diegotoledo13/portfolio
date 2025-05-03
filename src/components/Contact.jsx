@@ -78,7 +78,7 @@ const Contact = ({ text }) => {
           <img src={imagesLogo.mail} alt="gmail" height="38px" />
         </a>
         <a
-          href="/public/Diego_Toledo_CV.pdf"
+          href="/Diego_Toledo_CV.pdf"
           style={{ margin: "0 10px" }}
           download="Diego_Toledo_CV.pdf"
         >
