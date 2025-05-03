@@ -32,8 +32,10 @@ import postgreSQL from "./postgresql.svg";
 import redux from "./redux.svg";
 import astrodev from "./Astro.png";
 import solid from "./Solid.js.svg";
+import pdf from "./pdf.png";
 
 const imagesLogo = {
+  pdf,
   astrodev,
   redux,
   postgreSQL,

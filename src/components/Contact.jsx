@@ -70,9 +70,19 @@ const Contact = ({ text }) => {
         <Img src={images.dieguito} />
         <P>{text}</P>
       </Div1>
-      <Div2 className="flex flex-col items-center justify-center">
-        <a href="mailto:diego.toledo.sanchez13@gmail.com">
+      <Div2>
+        <a
+          href="mailto:diego.toledo.sanchez13@gmail.com"
+          style={{ margin: "0 10px" }}
+        >
           <img src={imagesLogo.mail} alt="gmail" height="38px" />
+        </a>
+        <a
+          href="/public/Diego_Toledo_CV.pdf"
+          style={{ margin: "0 10px" }}
+          download="Diego_Toledo_CV.pdf"
+        >
+          <img src={imagesLogo.pdf} alt="cv" height="38px" />
         </a>
       </Div2>
     </DivS>
