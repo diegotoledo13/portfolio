@@ -14,6 +14,16 @@ export const experiencia = [
     img: [images.santoscode],
     titleLinksEs: "Participación en proyectos",
     titleLinksEn: "Participation in projects",
+    titleLinks2Es: "Proyectos Actuales",
+    titleLinks2En: "Projects Currently",
+    titleSEOEs: "SEO y Marketing en FruqueteLa - EEUU",
+    titleSEOEn: "SEO and Marketing in FruqueteLa - USA",
+    descriptionSEOEs: " Contacto con FruqueteLa - EEUU - info@fruquetela.com",
+    descriptionSEOEn: "Contact with FruqueteLa - USA - info@fruquetela.com",
+    linkSEO: {
+      url: "https://fruquetela.com/",
+      logo: [images.fruquetela],
+    },
     links: [
       {
         url: "https://tectum.com.uy/",
@@ -35,6 +45,10 @@ export const experiencia = [
       {
         url: "https://turisticarduy.uy/",
         logo: [images.turusticard],
+      },
+      {
+        url: "https://iddmempaques.com/",
+        logo: [images.iddm],
       },
     ],
   },

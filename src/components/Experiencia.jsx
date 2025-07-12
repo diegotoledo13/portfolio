@@ -158,6 +158,33 @@ const Trabajos = ({ language }) => {
                 ))}
               </DivD>
             </DivIconos>
+            <DivIconos>
+              <H2>
+                {language === "english"
+                  ? trabajo.titleLinks2En
+                  : trabajo.titleLinks2Es}
+              </H2>
+              <H3>
+                {language === "english"
+                  ? trabajo.titleSEOEn
+                  : trabajo.titleSEOEs}
+              </H3>
+              <P>
+                {language === "english"
+                  ? trabajo.descriptionSEOEn
+                  : trabajo.descriptionSEOEs}
+              </P>
+              <DivD>
+                <a
+                  key={`${trabajo.id}-link-1`}
+                  href={trabajo.linkSEO.url}
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
+                  <ImgLogo src={trabajo.linkSEO.logo} alt="" />
+                </a>
+              </DivD>
+            </DivIconos>
           </Content>
         </DivMain>
       ))}

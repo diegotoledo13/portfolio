@@ -11,8 +11,12 @@ import teDescuento from "./icon.png";
 import turusticard from "./turusticarLogo.png";
 import adimo from "./logocircular.png";
 import propify from "./Propify.png";
+import iddm from "./logo Iddm.png";
+import fruquetela from "./Fruquetela.png";
 
 const images = {
+  fruquetela,
+  iddm,
   imgDiego,
   diegoPic,
   dieguito,
