@@ -17,31 +17,27 @@ export default function LanguageToggle() {
     }
   }, []);
 
-  const toggleLanguage = () => {
+  const toggleLanguage = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     const newLang = !isSpanish;
     setIsSpanish(newLang);
 
-    if (newLang) {
-      document.documentElement.lang = "es";
-      localStorage.setItem("language", "es");
-    } else {
-      document.documentElement.lang = "en";
-      localStorage.setItem("language", "en");
-    }
+    const langCode = newLang ? "es" : "en";
+    document.documentElement.lang = langCode;
+    localStorage.setItem("language", langCode);
 
     // Dispatch custom event for language change
     window.dispatchEvent(
-      new CustomEvent("languageChange", { detail: newLang ? "es" : "en" })
+      new CustomEvent("languageChange", { detail: langCode })
     );
-
-    // Force page reload to apply language changes
-    window.location.reload();
   };
 
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white dark:bg-gray-800 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 text-sm font-medium"
+      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:shadow-lg transition-all duration-300 text-sm font-medium"
       aria-label="Toggle language"
     >
       <span className="text-gray-700 dark:text-gray-300">

@@ -77,6 +77,11 @@ export const translations = {
         school: "Info-Center",
         location: "PC y Redes - Maldonado, Uruguay",
       },
+      {
+        title: "Formación Autodidacta",
+        school: "Platzi & Udemy",
+        location: "Plataformas de educación online",
+      },
     ],
 
     // Certifications
@@ -210,6 +215,11 @@ export const translations = {
         title: "Technical Support Specialist",
         school: "Info-Center",
         location: "PC and Networks - Maldonado, Uruguay",
+      },
+      {
+        title: "Self-taught Training",
+        school: "Platzi & Udemy",
+        location: "Online education platforms",
       },
     ],
 

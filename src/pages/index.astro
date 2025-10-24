@@ -1,7 +1,7 @@
 ---
 import ThemeToggle from '../components/ThemeToggle.jsx';
 import LanguageToggle from '../components/LanguageToggle.jsx';
-import { LanguageProvider } from '../components/LanguageProvider.jsx';
+import PortfolioContent from '../components/PortfolioContent.jsx';
 import '../styles/global.css';
 ---
 
@@ -15,17 +15,16 @@ import '../styles/global.css';
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans min-h-screen transition-colors duration-300">
-    <div class="fixed right-4 z-50 flex flex-col gap-4">
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-1">
-          <LanguageToggle client:load />
-        </div>
-        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-1">
-          <ThemeToggle client:load />
+    <div class="fixed top-4 right-4 z-50 flex gap-4">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-1 mr-9">
+        <LanguageToggle client:load />
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-1 mr-2">
+        <ThemeToggle client:load />
       </div>
     </div>
-    <LanguageProvider client:load>
-      <!-- Download CV Button and Social Links below profile image -->
-      <div class="fixed top-64 left-4 sm:left-6 z-40 flex flex-col gap-3">
+    <!-- Download CV Button and Social Links below profile image -->
+      <div class="fixed top-1 left-4 sm:left-6 z-40 flex flex-col gap-3">
         <a
           href="/Diego CV.pdf"
           download="Diego_Toledo_CV.pdf"
@@ -66,7 +65,7 @@ import '../styles/global.css';
       <div class="max-w-6xl mx-auto pt-6 sm:pt-8">
         <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
           <img
-            src="/imgDiego.png"
+            src="/src/assets/images/imgDiego.png"
             alt="Diego Toledo"
             class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full border-4 border-white shadow-xl object-cover"
           />
@@ -98,112 +97,7 @@ import '../styles/global.css';
 
         <!-- Left Column -->
         <div class="space-y-12">
-
-          <!-- About Section -->
-          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
-              Perfil Profesional
-            </h3>
-            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-justify text-sm sm:text-base">
-              Frontend Developer con experiencia en desarrollo de aplicaciones
-              web modernas utilizando React.js, JavaScript y tecnologías web
-              actuales. Especializado en crear interfaces de usuario responsivas
-              y optimizadas para SEO. Profesional responsable, organizado y
-              autodidacta, con sólidas habilidades en trabajo colaborativo y
-              resolución de problemas. Apasionado por el aprendizaje continuo y
-              la implementación de las mejores prácticas en desarrollo web.
-            </p>
-          </section>
-
-          <!-- Experience Section -->
-          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
-              Experiencia Laboral
-            </h3>
-            <div class="space-y-4 sm:space-y-6">
-              <div>
-                <div class="mb-3 sm:mb-4">
-                  <h4 class="text-lg sm:text-xl font-semibold text-primary-700 dark:text-primary-300 mb-1">Frontend Developer</h4>
-                  <div class="text-gray-600 dark:text-gray-400 font-medium mb-1">SantosCode</div>
-                  <div class="text-sm text-gray-500 dark:text-gray-500 italic">Mayo 2024 - Presente</div>
-                </div>
-                <ul class="text-gray-700 dark:text-gray-300 space-y-2 ml-4 sm:ml-6 text-sm sm:text-base">
-                  <li class="flex items-start gap-2">
-                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
-                    <span>Desarrollo y mantenimiento de aplicaciones web utilizando React.js, implementando componentes reutilizables y optimizados</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
-                    <span>Creación y customización de sitios web en WordPress, asegurando diseño responsivo y experiencia de usuario óptima</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
-                    <span>Implementación de estrategias SEO on-page, mejorando el posicionamiento orgánico de sitios web</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
-                    <span>Colaboración en equipo utilizando Git/GitHub para control de versiones y desarrollo colaborativo</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
-                    <span>Aplicación de patrones de diseño y mejores prácticas en React (render patterns, composition)</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- Skills Section -->
-          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
-              Habilidades Técnicas
-            </h3>
-            <div class="space-y-4 sm:space-y-6">
-              <div>
-                <h4 class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300 mb-3 sm:mb-4">Frontend Development</h4>
-                <div class="flex flex-wrap gap-2 sm:gap-3">
-                  {['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'React Router', 'Responsive Design'].map(skill => (
-                    <span class="bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-primary-200 dark:border-primary-700">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h4 class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300 mb-3 sm:mb-4">CMS & SEO</h4>
-                <div class="flex flex-wrap gap-2 sm:gap-3">
-                  {['WordPress', 'SEO Optimization', 'Web Performance'].map(skill => (
-                    <span class="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-green-200 dark:border-green-700">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h4 class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300 mb-3 sm:mb-4">Herramientas & Workflow</h4>
-                <div class="flex flex-wrap gap-2 sm:gap-3">
-                  {['Git', 'GitHub', 'NPM', 'Netlify'].map(skill => (
-                    <span class="bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-purple-200 dark:border-purple-700">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <h4 class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300 mb-3 sm:mb-4">Diseño & Otros</h4>
-                <div class="flex flex-wrap gap-2 sm:gap-3">
-                  {['Diseño Gráfico', 'UI/UX', 'Soporte Técnico'].map(skill => (
-                    <span class="bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-orange-200 dark:border-orange-700">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
+          <PortfolioContent client:load />
         </div>
 
         <!-- Right Column -->
@@ -229,6 +123,11 @@ import '../styles/global.css';
                 <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">Técnico en Reparación y Mantenimiento</h4>
                 <div class="text-primary-600 dark:text-primary-400 font-medium mb-1">Info-Center</div>
                 <div class="text-sm text-gray-500 dark:text-gray-400">PC y Redes - Maldonado, Uruguay</div>
+              </div>
+              <div class="border-l-4 border-primary-400 pl-4 sm:pl-6">
+                <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">Formación Autodidacta</h4>
+                <div class="text-primary-600 dark:text-primary-400 font-medium mb-1">Platzi & Udemy</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">Plataformas de educación online</div>
               </div>
             </div>
           </section>
@@ -286,6 +185,5 @@ import '../styles/global.css';
         </p>
       </div>
     </footer>
-    </LanguageProvider>
   </body>
 </html>
