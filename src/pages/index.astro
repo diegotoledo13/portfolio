@@ -1,0 +1,291 @@
+---
+import ThemeToggle from '../components/ThemeToggle.jsx';
+import LanguageToggle from '../components/LanguageToggle.jsx';
+import { LanguageProvider } from '../components/LanguageProvider.jsx';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diego Toledo - Frontend Developer</title>
+    <meta name="description" content="Portfolio de Diego Toledo - Frontend Developer especializado en React.js" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans min-h-screen transition-colors duration-300">
+    <div class="fixed right-4 z-50 flex flex-col gap-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-1">
+          <LanguageToggle client:load />
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-1">
+          <ThemeToggle client:load />
+      </div>
+    </div>
+    <LanguageProvider client:load>
+      <!-- Download CV Button and Social Links below profile image -->
+      <div class="fixed top-64 left-4 sm:left-6 z-40 flex flex-col gap-3">
+        <a
+          href="/Diego CV.pdf"
+          download="Diego_Toledo_CV.pdf"
+          class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-lg"
+          aria-label="Download CV"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586 11.293 8.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+          CV
+        </a>
+
+        <div class="flex flex-col gap-2">
+          <a
+            href="https://github.com/diegotoledo13"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg transition-all duration-200 shadow-lg"
+            aria-label="GitHub"
+          >
+            💻
+          </a>
+          <a
+            href="https://www.linkedin.com/in/diego-toledo-64a356241/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-200 shadow-lg"
+            aria-label="LinkedIn"
+          >
+            💼
+          </a>
+        </div>
+      </div>
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-primary-400 to-primary-600 dark:from-primary-600 dark:to-primary-800 text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative">
+
+      <div class="max-w-6xl mx-auto pt-6 sm:pt-8">
+        <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+          <img
+            src="/imgDiego.png"
+            alt="Diego Toledo"
+            class="w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full border-4 border-white shadow-xl object-cover"
+          />
+          <div class="text-center lg:text-left">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3">Diego Toledo</h1>
+            <h2 class="text-lg sm:text-xl lg:text-2xl font-light opacity-90 mb-4 sm:mb-6">Frontend Developer | React Specialist</h2>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 text-xs sm:text-sm">
+              <div class="flex items-center gap-2">
+                <span class="text-base sm:text-lg">📧</span>
+                <span>diego.toledo.sanchez13@gmail.com</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-base sm:text-lg">📱</span>
+                <span>+598 98 182 265</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-base sm:text-lg">📍</span>
+                <span>Maldonado, Uruguay</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+
+        <!-- Left Column -->
+        <div class="space-y-12">
+
+          <!-- About Section -->
+          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
+              Perfil Profesional
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-justify text-sm sm:text-base">
+              Frontend Developer con experiencia en desarrollo de aplicaciones
+              web modernas utilizando React.js, JavaScript y tecnologías web
+              actuales. Especializado en crear interfaces de usuario responsivas
+              y optimizadas para SEO. Profesional responsable, organizado y
+              autodidacta, con sólidas habilidades en trabajo colaborativo y
+              resolución de problemas. Apasionado por el aprendizaje continuo y
+              la implementación de las mejores prácticas en desarrollo web.
+            </p>
+          </section>
+
+          <!-- Experience Section -->
+          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
+              Experiencia Laboral
+            </h3>
+            <div class="space-y-4 sm:space-y-6">
+              <div>
+                <div class="mb-3 sm:mb-4">
+                  <h4 class="text-lg sm:text-xl font-semibold text-primary-700 dark:text-primary-300 mb-1">Frontend Developer</h4>
+                  <div class="text-gray-600 dark:text-gray-400 font-medium mb-1">SantosCode</div>
+                  <div class="text-sm text-gray-500 dark:text-gray-500 italic">Mayo 2024 - Presente</div>
+                </div>
+                <ul class="text-gray-700 dark:text-gray-300 space-y-2 ml-4 sm:ml-6 text-sm sm:text-base">
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
+                    <span>Desarrollo y mantenimiento de aplicaciones web utilizando React.js, implementando componentes reutilizables y optimizados</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
+                    <span>Creación y customización de sitios web en WordPress, asegurando diseño responsivo y experiencia de usuario óptima</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
+                    <span>Implementación de estrategias SEO on-page, mejorando el posicionamiento orgánico de sitios web</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
+                    <span>Colaboración en equipo utilizando Git/GitHub para control de versiones y desarrollo colaborativo</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-primary-500 mt-1 flex-shrink-0">•</span>
+                    <span>Aplicación de patrones de diseño y mejores prácticas en React (render patterns, composition)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <!-- Skills Section -->
+          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
+              Habilidades Técnicas
+            </h3>
+            <div class="space-y-4 sm:space-y-6">
+              <div>
+                <h4 class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300 mb-3 sm:mb-4">Frontend Development</h4>
+                <div class="flex flex-wrap gap-2 sm:gap-3">
+                  {['React.js', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'React Router', 'Responsive Design'].map(skill => (
+                    <span class="bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-primary-200 dark:border-primary-700">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300 mb-3 sm:mb-4">CMS & SEO</h4>
+                <div class="flex flex-wrap gap-2 sm:gap-3">
+                  {['WordPress', 'SEO Optimization', 'Web Performance'].map(skill => (
+                    <span class="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-green-200 dark:border-green-700">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300 mb-3 sm:mb-4">Herramientas & Workflow</h4>
+                <div class="flex flex-wrap gap-2 sm:gap-3">
+                  {['Git', 'GitHub', 'NPM', 'Netlify'].map(skill => (
+                    <span class="bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-purple-200 dark:border-purple-700">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 class="text-base sm:text-lg font-semibold text-primary-700 dark:text-primary-300 mb-3 sm:mb-4">Diseño & Otros</h4>
+                <div class="flex flex-wrap gap-2 sm:gap-3">
+                  {['Diseño Gráfico', 'UI/UX', 'Soporte Técnico'].map(skill => (
+                    <span class="bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-orange-200 dark:border-orange-700">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-12">
+
+          <!-- Education Section -->
+          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
+              Educación
+            </h3>
+            <div class="space-y-4 sm:space-y-6">
+              <div class="border-l-4 border-primary-400 pl-4 sm:pl-6">
+                <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">Front-end Developer</h4>
+                <div class="text-primary-600 dark:text-primary-400 font-medium mb-1">Escuelas IADE</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">Montevideo, Uruguay</div>
+              </div>
+              <div class="border-l-4 border-primary-400 pl-4 sm:pl-6">
+                <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">Diseñador Gráfico</h4>
+                <div class="text-primary-600 dark:text-primary-400 font-medium mb-1">Info-Center</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">Maldonado, Uruguay</div>
+              </div>
+              <div class="border-l-4 border-primary-400 pl-4 sm:pl-6">
+                <h4 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">Técnico en Reparación y Mantenimiento</h4>
+                <div class="text-primary-600 dark:text-primary-400 font-medium mb-1">Info-Center</div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">PC y Redes - Maldonado, Uruguay</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Certifications Section -->
+          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
+              Certificaciones
+            </h3>
+            <div class="space-y-4 sm:space-y-6">
+              {[
+                { title: 'Curso de React.js: Patrones de Render y Composición', platform: 'Platzi', date: 'Octubre 2022' },
+                { title: 'Curso de React.js: Navegación con React Router', platform: 'Platzi', date: 'Diciembre 2022' },
+                { title: 'Curso de Introducción a React.js', platform: 'Platzi', date: 'Septiembre 2022' },
+                { title: 'Curso de Frontend Developer', platform: 'Platzi', date: 'Julio 2022' },
+                { title: 'Curso Definitivo de HTML y CSS', platform: 'Platzi', date: 'Julio 2022' },
+                { title: 'Curso Profesional de Git y GitHub', platform: 'Platzi', date: 'Mayo 2022' }
+              ].map(cert => (
+                <div class="border-l-4 border-green-400 pl-4 sm:pl-6">
+                  <h4 class="text-sm sm:text-base lg:text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">{cert.title}</h4>
+                  <div class="text-green-600 dark:text-green-400 font-medium mb-1">{cert.platform}</div>
+                  <div class="text-sm text-gray-500 dark:text-gray-400">{cert.date}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Languages Section -->
+          <section class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl sm:text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4 sm:mb-6 pb-2 sm:pb-3 border-b-3 border-primary-400 uppercase tracking-wide">
+              Idiomas
+            </h3>
+            <div class="space-y-3 sm:space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-800 dark:text-gray-200 font-medium text-sm sm:text-base">Español</span>
+                <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm sm:text-base">Nativo</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-800 dark:text-gray-200 font-medium text-sm sm:text-base">Inglés</span>
+                <span class="text-primary-600 dark:text-primary-400 font-semibold text-sm sm:text-base">Básico (Estudiando)</span>
+              </div>
+            </div>
+          </section>
+
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 sm:py-8 mt-12 sm:mt-16 border-t border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
+          © 2024 Diego Toledo. Desarrollado con Astro y Tailwind CSS.
+        </p>
+      </div>
+    </footer>
+    </LanguageProvider>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+---
+const { education } = Astro.props;
+---
+
+<section class="bg-white rounded-lg p-6 shadow-sm">
+  <h3 class="text-2xl font-bold text-blue-600 mb-6 border-b-2 border-cyan-400 pb-2">
+    Educación
+  </h3>
+  <div class="space-y-4">
+    {education.map((edu, index) => (
+      <div class="border-l-4 border-blue-400 pl-4">
+        <h4 class="text-lg font-semibold text-gray-800 mb-1">{edu.title}</h4>
+        <div class="text-blue-600 font-medium mb-1">{edu.school}</div>
+        <div class="text-sm text-gray-500">{edu.location}</div>
+      </div>
+    ))}
+  </div>
+</section>

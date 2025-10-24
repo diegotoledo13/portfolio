@@ -1,2 +1,0 @@
-export const contactEs =
-  "¡Gracias por visitar mi página web personal! Aquí encontrarás los proyectos que he desarrollado como parte de mi aprendizaje continuo y exploración de nuevas tecnologías. Te invito a navegar por mi portfolio y conocer mi trabajo. Si estás interesado en contactarme, puedes hacerlo a través de mi correo electrónico o mis redes sociales que encontrarás en esta página. ¡Gracias por tu tiempo!";
